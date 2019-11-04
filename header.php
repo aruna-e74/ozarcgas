@@ -28,31 +28,56 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ozarcgas' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
+		<div class="wrap">
+			<div class="header-area-wrapper">
+				<div class="row">
+					<div class="col-6">
+						<div class="logo-wrapper">
+							<a href="<?php bloginfo('url') ?>"> <img src="<?php the_field('logo', 'option') ?>" alt=""> </a>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="top-menu-wrapper">
+							<div class="top-nav-wrapper">
+								<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-menu-wrapper">
+			<div class="main-nav-wrapper">
 				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
+					<?php get_template_part( 'template-parts/navigation/navigation', 'main' ); ?>
+				</div>
+			</div>
+		</div>
 	</header><!-- #masthead -->
 
-	<?php
-
-	/*
-	 * If a regular post or page, and not the front page, show the featured image.
-	 * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
-	 */
-	if ( ( is_single() || ( is_page() && ! ozarcgas_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-		echo '<div class="single-featured-image-header">';
-		echo get_the_post_thumbnail( get_queried_object_id(), 'ozarcgas-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
-	?>
+	<?php if ( is_front_page() ) : ?>
+	<section id="home-sider-section">
+		<div class="wrap">
+			<?php if ( have_rows('home_slider') ) : $num = 0;?>
+			<div id="home-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+				<div class="carousel-inner">
+				<?php while( have_rows('home_slider') ) : the_row();
+					$image = get_sub_field('slider_image');
+				?>
+					<?php if ( $num == 0 ) : ?>
+					<div class="carousel-item active">
+					<?php else : ?>
+					<div class="carousel-item">
+					<?php endif; ?>
+						<div class="slider-image-wrapper" style="background:url(<?php echo $image; ?>) no-repeat;"></div>
+					</div>
+				<?php $num++; endwhile; ?>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</section>
+	<?php endif; ?>
 
 	<div class="site-content-contain">
 		<div id="content" class="site-content">

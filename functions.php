@@ -286,8 +286,9 @@ function ozarcgas_fonts_url() {
 	 * supported by Libre Franklin, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$libre_franklin = _x( 'on', 'Libre Franklin font: on or off', 'ozarcgas' );
+	$libre_franklin = _x( 'off', 'Libre Franklin font: on or off', 'ozarcgas' );
 
+	/*
 	if ( 'off' !== $libre_franklin ) {
 		$font_families = array();
 
@@ -300,6 +301,7 @@ function ozarcgas_fonts_url() {
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
+	*/
 
 	return esc_url_raw( $fonts_url );
 }
@@ -447,9 +449,18 @@ function ozarcgas_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'ozarcgas-style', get_stylesheet_uri() );
+	wp_enqueue_style('main-css', get_theme_file_uri( '/assets/css/master.css' ), array( 'ozarcgas-style' ), "1.0", all);
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'ozarcgas-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'ozarcgas-style' ), '1.1' );
+
+	// Custom Sripts
+	wp_enqueue_script('main-jquery', get_theme_file_uri( '/assets/js/scripts.js' ), array('jquery'), "1.0", true);
+
+	// Bootstrap
+	wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null, all);
+	wp_enqueue_script('bootstrap-jquery-one', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), null, false);
+	wp_enqueue_script('bootstrap-jquery-two', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js', array('jquery'), null, false);
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {

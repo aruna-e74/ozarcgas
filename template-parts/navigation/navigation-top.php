@@ -3,31 +3,22 @@
  * Displays top navigation
  *
  * @package WordPress
- * @subpackage ozarc_gas
+ * @subpackage notre_dame
  * @since 1.0
  * @version 1.2
  */
 
 ?>
-<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'ozarcgas' ); ?>">
-	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
-		<?php
-		echo ozarcgas_get_svg( array( 'icon' => 'bars' ) );
-		echo ozarcgas_get_svg( array( 'icon' => 'close' ) );
-		_e( 'Menu', 'ozarcgas' );
-		?>
-	</button>
-
+<nav class="top-nav">
 	<?php
 	wp_nav_menu(
 		array(
 			'theme_location' => 'top',
-			'menu_id'        => 'top-menu',
+			'container' => false,
+			'menu_class' => 'top-menu',
+			'depth'	=> 1,
+			'items_wrap' => '<div class="top-menu-container"><ul role="list" id="top-menu" class="top-menu">%3$s</ul></div>',
 		)
 	);
 	?>
-
-	<?php if ( ( ozarcgas_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo ozarcgas_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'ozarcgas' ); ?></span></a>
-	<?php endif; ?>
-</nav><!-- #site-navigation -->
+</nav>

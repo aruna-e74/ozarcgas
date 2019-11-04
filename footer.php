@@ -18,29 +18,18 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrap">
-				<?php
-				get_template_part( 'template-parts/footer/footer', 'widgets' );
-
-				if ( has_nav_menu( 'social' ) ) :
-					?>
-					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'ozarcgas' ); ?>">
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'social',
-									'menu_class'     => 'social-links-menu',
-									'depth'          => 1,
-									'link_before'    => '<span class="screen-reader-text">',
-									'link_after'     => '</span>' . ozarcgas_get_svg( array( 'icon' => 'chain' ) ),
-								)
-							);
-						?>
-					</nav><!-- .social-navigation -->
-					<?php
-				endif;
-
-				get_template_part( 'template-parts/footer/site', 'info' );
-				?>
+				<div class="footer-info">
+					<?php bloginfo('name') ?> - <span><?php the_field('address_line_one', 'option') ?></span> - <span><?php the_field('city', 'option') ?>, <?php the_field('state', 'option') ?> <?php the_field('zip', 'option') ?></span>
+				</div>
+				<div class="copywright">
+					Copyright © 2009-<span id="year"></span> Ozarc Gas Equipment & Supply, Inc. All rights reserved.
+				</div>
+				<div class="disclaimer">
+					Other products and companies referred to herein are trademarks or registered trademarks of their respective companies or mark holders.
+				</div>
+				<div class="e74">
+					powered by <a href="https://www.element74.com" target="_blank">element 74</a>
+				</div>
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
