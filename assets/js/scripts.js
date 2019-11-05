@@ -17,5 +17,32 @@ jQuery(document).ready(function($){
 		}
 	});
 
+	/*-- Mobile Menu --*/
+	$('.bars-wrapper').click(function(){
+    	$(this).toggleClass('change');
+		$(this).parents().find('.mobile-menu-wrapper').find('.mobile-nav-wrapper').toggleClass('nav-wrapper-show');
+		// $(this).parents().find('.main-menu-wrapper').find('.main-nav-wrapper').find('.nav-wrapper').toggleClass('nav-wrapper-show');
+  	});
+
+	$('ul#mobile-menu > .menu-top-menu-container > li.menu-item-has-children > ul.sub-menu').addClass('first-mobile-sub');
+	$('ul#mobile-menu > .menu-top-menu-container > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children > ul.sub-menu').addClass('second-mobile-sub');
+
+	$('ul#mobile-menu > .menu-main-menu-container > li.menu-item-has-children > ul.sub-menu').addClass('first-mobile-sub');
+	$('ul#mobile-menu > .menu-main-menu-container > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children > ul.sub-menu').addClass('second-mobile-sub')
+
+	$('ul#mobile-menu > .menu-main-menu-container > li.menu-item-has-children').append('<i class="fas fa-plus open-menu-icon open-icon-one"></i>');
+	$('ul#mobile-menu > .menu-main-menu-container > li.menu-item-has-children > ul.sub-menu.first-mobile-sub > li.menu-item-has-children').append('<i class="fas fa-plus open-menu-icon open-icon-two"></i>');
+
+	$('i.fas.fa-plus.open-menu-icon.open-icon-one').click(function(){
+		$(this).toggleClass('close-menu-icon');
+		$(this).parent('li.menu-item-has-children').find('ul.sub-menu.first-mobile-sub').toggleClass('show-mobile-sub-menu');
+	});
+
+	$('i.fas.fa-plus.open-menu-icon.open-icon-two').click(function(){
+		$(this).toggleClass('close-menu-icon');
+		$(this).parent('li.menu-item-has-children').find('ul.sub-menu.second-mobile-sub').toggleClass('show-mobile-sub-menu');
+	});
+
+
 	$("#year").text(new Date().getFullYear());
 });

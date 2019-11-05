@@ -17,6 +17,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
+include_once('vc-elements/solutions.php');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -456,6 +458,9 @@ function ozarcgas_scripts() {
 
 	// Custom Sripts
 	wp_enqueue_script('main-jquery', get_theme_file_uri( '/assets/js/scripts.js' ), array('jquery'), "1.0", true);
+
+	// Font Awesome
+	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/48ae7a415a.js', array('jquery'), null, false);
 
 	// Bootstrap
 	wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null, all);

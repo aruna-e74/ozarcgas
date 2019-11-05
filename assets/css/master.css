@@ -21,6 +21,7 @@
 *******************************/
 body{
 	background-color: #082060 !important;
+	min-width: 320px !important;
 }
 
 a{
@@ -232,10 +233,145 @@ ul.sub-menu li, ul.sub-menu a{
     width: 100%;
 }
 
+.mobile-menu-holder{
+	display: none;
+}
+
 /*******************************
 **  2.3 Mobile Menu
 *******************************/
+@media (max-width: 991px) {
+	.mobile-menu-holder{
+		position: relative;
+	}
 
+	.mobile-menu-wrapper {
+	    position: fixed;
+	    width: 100%;
+	    z-index: 2;
+	}
+
+	.menu-bar-wrapper {
+	    position: absolute;
+	    width: 50px;
+	    height: 50px;
+	    right: 0;
+	    background-color: #082060;
+		z-index: 1;
+		display: flex;
+		-ms-flex-align: center;
+		display: -webkit-flex;
+	}
+
+	.bars-wrapper{
+		margin: auto;
+		cursor: pointer;
+	}
+
+	.bar1, .bar2, .bar3{
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		margin: 5px 0;
+		transition: 0.5s ease;
+	}
+
+	.bars-wrapper.change > .bar1{
+		transform: rotate(135deg) translate(6px, -6px);
+		-webkit-transform: rotate(135deg) translate(6px, -6px);
+	}
+
+	.bars-wrapper.change > .bar3{
+		transform: rotate(45deg) translate(-5px, -5px);
+		-webkit-transform: rotate(45deg) translate(-5px, -5px);
+	}
+
+	.bars-wrapper.change > .bar2{
+		opacity: 0;
+	}
+
+	.mobile-nav-wrapper{
+		position: absolute;
+		height: 100vh;
+		transition: 0.25s ease-in-out;
+		width: 100%;
+		right: -100%;
+		background-color: #082060;
+	}
+
+	.mobile-menu-container {
+		margin-top: 50px;
+		max-height: calc(100vh - 100px);
+		overflow: auto;
+	}
+
+	ul#mobile-menu {
+		margin: 0;
+		list-style: none;
+	}
+
+	ul#mobile-menu li{
+		position: relative;
+	}
+
+	ul#mobile-menu li.current-menu-item a{
+		background-color: #107d3c;
+	}
+
+	li.current-menu-item ul.sub-menu a {
+    	background-color: #082060 !important;
+	}
+
+	ul#mobile-menu li a, ul#mobile-menu ul.sub-menu li a {
+		padding: 5px 50px 5px 20px;
+		width: 100%;
+		color: #fff;
+		font-weight: 600;
+		text-transform: uppercase;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+	}
+
+	ul#mobile-menu ul.sub-menu{
+		position: relative;
+		display: block;
+		opacity: 1;
+		z-index: 0;
+		list-style: none;
+		margin: 0 20px;
+		height: 0;
+		overflow: hidden;
+	}
+
+	ul#mobile-menu ul.sub-menu li a{
+		border-left: 0px solid transparent;
+		border-right: 0px solid transparent;
+		border-bottom: 0px solid transparent;
+		font-size: 16px;
+		font-weight: 400;
+    	text-transform: capitalize;
+	}
+
+	i.fas.fa-plus.open-menu-icon {
+	    position: absolute;
+	    top: 9px;
+	    color: #fff;
+	    right: 16px;
+		transition: 0.25s ease;
+	}
+
+	.nav-wrapper-show{
+		right: 0;
+	}
+
+	.close-menu-icon{
+		transform: rotate(45deg);
+	}
+
+	.show-mobile-sub-menu{
+		height: auto !important;
+	}
+}
 
 /*******************************
 **  3. Front Page
@@ -247,7 +383,7 @@ section#home-sider-section .wrap{
 .slider-image-wrapper{
 	background-size: cover !important;
 	background-position: center center !important;
-	height: 300px;
+	height: 400px;
 }
 
 .content_row-wrapper {
@@ -301,12 +437,46 @@ section#home-sider-section .wrap{
 /*******************************
 **  6. VC Elements
 *******************************/
+.solutions-wrapper{
+	padding: 5px 15px;
+	background-color: #e6e6e6;
+	margin-bottom: 1.5em;
+	border: 1px solid;
+}
 
+.solutions-title{
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+
+.solutions-content{
+	color: #ff0066;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.ellipsis{
+	color: #000;
+}
 
 /*******************************
 **  7. Media Queries
 *******************************/
+@media (max-width: 991px) {
+	.main-menu-wrapper, .top-menu-wrapper{
+		display: none;
+	}
 
+	.mobile-menu-holder{
+		display: block;
+	}
+}
+
+@media (max-width: 767px) {
+	.content_row-wrapper{
+		text-align: center;
+	}
+}
 
 /*******************************
 **  8. Custom Additions

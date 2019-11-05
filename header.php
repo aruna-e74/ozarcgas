@@ -28,15 +28,34 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ozarcgas' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		<!-- Mobile Menu -->
+		<div class="mobile-menu-holder">
+			<div class="mobile-menu-wrapper">
+				<div class="menu-bar-wrapper">
+					<div class="bars-wrapper">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</div>
+				</div>
+				<div class="mobile-nav-wrapper">
+					<div class="nav-wrapper">
+						<!-- navigation-mobile.php -->
+						<?php get_template_part( 'template-parts/navigation/navigation', 'mobile' ); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mobile Menu -->
 		<div class="wrap">
 			<div class="header-area-wrapper">
 				<div class="row">
-					<div class="col-6">
+					<div class="col-12 col-lg-6">
 						<div class="logo-wrapper">
 							<a href="<?php bloginfo('url') ?>"> <img src="<?php the_field('logo', 'option') ?>" alt=""> </a>
 						</div>
 					</div>
-					<div class="col-6">
+					<div class="col-lg-6">
 						<div class="top-menu-wrapper">
 							<div class="top-nav-wrapper">
 								<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
