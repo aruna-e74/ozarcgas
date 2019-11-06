@@ -462,6 +462,11 @@ function ozarcgas_scripts() {
 	// Font Awesome
 	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/48ae7a415a.js', array('jquery'), null, false);
 
+	// Slick
+	wp_enqueue_style('slick-css', get_theme_file_uri( '/assets/slick/slick.css' ), array( 'ozarcgas-style' ), "1.0", all);
+	wp_enqueue_style('slick-theme', get_theme_file_uri( '/assets/slick/slick-theme.css' ), array( 'ozarcgas-style' ), "1.0", all);
+	wp_enqueue_script('slick-js', get_theme_file_uri( '/assets/slick/slick.min.js' ), array('jquery'), "1.0", true);
+
 	// Bootstrap
 	wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null, all);
 	wp_enqueue_script('bootstrap-jquery-one', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), null, false);

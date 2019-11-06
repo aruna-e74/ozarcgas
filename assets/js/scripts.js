@@ -43,6 +43,37 @@ jQuery(document).ready(function($){
 		$(this).parent('li.menu-item-has-children').find('ul.sub-menu.second-mobile-sub').toggleClass('show-mobile-sub-menu');
 	});
 
+	/*-- Gallery Slider --*/
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		dots: false,
+		adaptiveHeight: true,
+		asNavFor: '.slider-nav'
+	});
+	$('.slider-nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.slider-for',
+		dots: true,
+		centerMode: true,
+		focusOnSelect: true,
+		arrows: true,
+		responsive: [{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 2
+			}
+		},{
+			breakpoint: 576,
+			settings: {
+				slidesToShow: 1
+			}
+		}],
+	});
+
 
 	$("#year").text(new Date().getFullYear());
 });

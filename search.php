@@ -14,14 +14,6 @@ get_header(); ?>
 
 <div class="wrap">
 
-	<header class="page-header">
-		<?php if ( have_posts() ) : ?>
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'ozarcgas' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		<?php else : ?>
-			<h1 class="page-title"><?php _e( 'Nothing Found', 'ozarcgas' ); ?></h1>
-		<?php endif; ?>
-	</header><!-- .page-header -->
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

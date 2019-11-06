@@ -22,6 +22,11 @@
 body{
 	background-color: #082060 !important;
 	min-width: 320px !important;
+	font-family: 'Verdana';
+}
+
+body #content{
+	font-size: 18px;
 }
 
 a{
@@ -42,18 +47,23 @@ ul, ol {
 
 h1, h2, h3{
 	padding: 0;
+	color: #000;
+	font-family: 'Ariel';
 }
 
 h4, h5, h6{
-
+	color: #000;
+	font-family: 'Ariel';
 }
 
 button, input[type="button"], input[type="submit"], .vc_btn3, .gform_button{
-
+	background-color: #f17f29 !important;
+	border: 2px solid #f17f29 !important;
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover, .vc_btn3:hover, .gform_button:hover{
-
+	background-color:  transparent !important;
+	color: #f17f29 !important;
 }
 
 .site-header, .site-content-contain{
@@ -64,11 +74,11 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover, .vc_btn3:h
 	background-color: #fff;
 }
 
-.page:not(.home) #content {
+.page:not(.home) #content, body.post-type-archive-gallery #content, body.single #content, body.single-gallery #content, body:not(.home) #content{
     padding: 0;
 }
 
-.page:not(.home) #content .wrap {
+body:not(.home) #content .wrap, .page:not(.home) #content .wrap, body.post-type-archive-gallery #content .wrap, body.single #content .wrap, body.single-gallery #content .wrap{
     padding: 3em;
 	min-height: calc(100vh - 275px);
 }
@@ -83,6 +93,11 @@ footer#colophon {
 
 .site-footer .wrap {
     border-top: 1px solid gray;
+}
+
+article.gallery, body.search article{
+	float: none !important;
+	width: 100% !important;
 }
 
 /*******************************
@@ -110,6 +125,32 @@ footer#colophon {
 .logo-wrapper img{
 	width: 100%;
 	max-height: 100%;
+}
+
+.search-form{
+	display: flex;
+	display: -webkit-box;
+}
+
+.menu-area-search .search-field{
+	width: auto;
+	height: 30px;
+	font-size: 12px;
+	box-shadow: 0 0 10px 0 #d1d1d1;
+}
+
+.menu-area-search .search-submit{
+	bottom: 0;
+	padding: 5px 10px;
+	position: relative;
+	top: 0;
+	right: 0;
+	margin-left: 5px;
+	border-radius: 50px;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	height: 30px;
 }
 
 /*******************************
@@ -191,6 +232,10 @@ ul#main-menu a {
 
 ul#main-menu > li:nth-last-child(1) > a {
 	border-right: 1px solid #fff;
+}
+
+li.pay-bill a {
+	background-color: #107d3c !important;
 }
 
 ul#main-menu li a:hover{
@@ -409,7 +454,70 @@ section#home-sider-section .wrap{
 /*******************************
 **  4. Secondary Page
 *******************************/
+/*-- Gallery Page Archive --*/
+.gallery-wrapper a, .gallery-wrapper a:hover{
+	color: #000;
+	text-decoration: none;
+}
 
+.gallery-img {
+	width: 100%;
+	height: 250px;
+	background-size: cover !important;
+}
+
+.gallery-title {
+	padding: 10px 0;
+	text-align: center;
+	font-weight: 700;
+	border-bottom: 1px solid #000;
+}
+
+.prop-img-wrapper{
+	padding: 25px 12.5px;
+}
+
+.prop-img{
+	height: 150px;
+	background-size: cover !important;
+}
+
+.slick-current .prop-img {
+	border: 5px solid #082060;
+}
+
+.slick-dots li.slick-active button:before {
+	opacity: 1;
+	color: #082060;
+}
+
+.slick-prev, .slick-next{
+	top: 100% !important;
+	transform: translate(0, 25%) !important;
+	-webkit-transform: translate(0, 25%) !important;
+	-ms-transform: translate(0, 25%) !important;
+	z-index: 2;
+}
+
+.slick-prev:before, .slick-next:before{
+	color: #082060  !important;
+}
+
+.slick-prev{
+	left: 0 !important;
+}
+
+.slick-next{
+	right: 0 !important;
+}
+
+.for-img-wrapper img{
+	margin: auto;
+}
+
+.gallery-content-wrapper{
+	text-align: center;
+}
 
 /*******************************
 **  5. Footer
@@ -475,6 +583,16 @@ section#home-sider-section .wrap{
 @media (max-width: 767px) {
 	.content_row-wrapper{
 		text-align: center;
+	}
+}
+
+@media (max-width: 575px) {
+	.gallery-content-wrapper{
+		margin-top: 15px;
+	}
+
+	.prop-img-wrapper {
+		padding: 0px 12.5px 25px 12.5px;
 	}
 }
 
