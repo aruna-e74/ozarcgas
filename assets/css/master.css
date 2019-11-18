@@ -417,6 +417,18 @@ ul.sub-menu li, ul.sub-menu a{
 	.show-mobile-sub-menu{
 		height: auto !important;
 	}
+
+	.menu-area-search{
+		display: none;
+	}
+
+	.mobile-menu-icon{
+		display: block;
+	}
+}
+
+.mobile-menu-icon{
+	display: none;
 }
 
 /*******************************

@@ -61,6 +61,9 @@
 								<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 							</div>
 						</div>
+						<div class="mobile-menu-icon">
+							<?php get_template_part( 'template-parts/navigation/navigation', 'icons' ); ?>
+						</div>
 						<div class="menu-area-search">
 							<?php get_template_part( 'template-parts/header/header-search', get_post_format() );; ?>
 						</div>
