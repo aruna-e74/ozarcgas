@@ -61,7 +61,7 @@ button, input[type="button"], input[type="submit"], .vc_btn3, .gform_button{
 	border: 2px solid #f17f29 !important;
 }
 
-button:hover, input[type="button"]:hover, input[type="submit"]:hover, .vc_btn3:hover, .gform_button:hover{
+div:not(.wpfc-calendar-wrapper) button:hover, input[type="button"]:hover, input[type="submit"]:hover, .vc_btn3:hover, .gform_button:hover{
 	background-color:  transparent !important;
 	color: #f17f29 !important;
 }
@@ -128,8 +128,9 @@ article.gallery, body.search article{
 }
 
 .search-form{
-	display: flex;
-	display: -webkit-box;
+	display: inline-flex;
+	display: -webkit-inline-flex;
+	-ms-flex-align: center;
 }
 
 .menu-area-search .search-field{
@@ -581,6 +582,14 @@ section#home-sider-section .wrap{
 }
 
 @media (max-width: 767px) {
+	.logo-wrapper{
+		width: 100%;
+	}
+
+	.menu-area-search{
+		text-align: center;
+	}
+
 	.content_row-wrapper{
 		text-align: center;
 	}
