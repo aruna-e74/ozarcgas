@@ -24,6 +24,11 @@ jQuery(document).ready(function($){
 		// $(this).parents().find('.main-menu-wrapper').find('.main-nav-wrapper').find('.nav-wrapper').toggleClass('nav-wrapper-show');
   	});
 
+	/*-- Icons Menu --*/
+	$('li.search-icon').click(function(){
+		$(this).parents('.mobile-menu-icon').find('.menu-area-search').toggleClass('show-search');
+	});
+
 	$('ul#mobile-menu > .menu-top-menu-container > li.menu-item-has-children > ul.sub-menu').addClass('first-mobile-sub');
 	$('ul#mobile-menu > .menu-top-menu-container > li.menu-item-has-children > ul.sub-menu > li.menu-item-has-children > ul.sub-menu').addClass('second-mobile-sub');
 

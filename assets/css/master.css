@@ -423,7 +423,29 @@ ul.sub-menu li, ul.sub-menu a{
 	}
 
 	.mobile-menu-icon{
-		display: block;
+		display: block !important;
+	}
+
+	.icon-menu-container{
+		text-align: center;
+	}
+
+	ul#icon-menu {
+	    list-style: none;
+	    margin: 0;
+	}
+
+	ul#icon-menu li {
+	    display: inline-block;
+	}
+
+	ul#icon-menu img {
+	    width: 35px;
+	}
+
+	.show-search{
+		display: block !important;
+		margin-top: 10px;
 	}
 }
 
