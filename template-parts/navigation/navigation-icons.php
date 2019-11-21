@@ -29,13 +29,14 @@
 
 	wp_nav_menu(
 		array(
-			'theme_location' => 'top',
+			'theme_location' => 'mobile',
 			'container' => false,
 			'menu_class' => 'icon-menu',
 			'depth'	=> 1,
 			'items_wrap' => '<div class="icon-menu-container">
 								<ul role="list" id="icon-menu" class="icon-menu">
 									%3$s
+									<li class="phone-icon"><a href="tel:'.get_field('phone_number', 'option').'"><img src="'.get_bloginfo('template_url').'/assets/images/phone-icon.png" alt=""></a></li>
 									<li class="search-icon"><img src="'.get_bloginfo('template_url').'/assets/images/search-icon.png" alt=""></li>
 								</ul>
 							</div>',

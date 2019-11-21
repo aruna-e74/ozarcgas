@@ -451,7 +451,7 @@ function ozarcgas_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'ozarcgas-style', get_stylesheet_uri() );
-	wp_enqueue_style('main-css', get_theme_file_uri( '/assets/css/master.css' ), array( 'ozarcgas-style' ), "1.1", all);
+	wp_enqueue_style('main-css', get_theme_file_uri( '/assets/css/master.css' ), array( 'ozarcgas-style' ), "1.2.1", all);
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'ozarcgas-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'ozarcgas-style' ), '1.1' );

@@ -622,6 +622,7 @@ section#home-sider-section .wrap{
 
 	.menu-area-search{
 		text-align: center;
+		max-width: 100%;
 	}
 
 	.content_row-wrapper{
