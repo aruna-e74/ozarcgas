@@ -446,6 +446,7 @@ ul.sub-menu li, ul.sub-menu a{
 	.show-search{
 		display: block !important;
 		margin-top: 10px;
+		text-align: center;
 	}
 }
 

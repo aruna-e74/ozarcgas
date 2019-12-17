@@ -29,7 +29,7 @@
 
 	wp_nav_menu(
 		array(
-			'theme_location' => 'mobile',
+			'theme_location' => 'top',
 			'container' => false,
 			'menu_class' => 'icon-menu',
 			'depth'	=> 1,
